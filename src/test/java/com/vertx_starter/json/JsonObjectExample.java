@@ -50,13 +50,13 @@ public class JsonObjectExample {
 
   @Test
   void canMapJavaObjects(){
-    var person  = new Person(1, "Edevar", true);
-    var edevar = JsonObject.mapFrom(person);
+    final var person  = new Person(1, "Edevar", true);
+    final var edevar = JsonObject.mapFrom(person);
     assertEquals(person.getId(), edevar.getInteger("id"));
     assertEquals(person.getName(), edevar.getString("name"));
     assertEquals(person.isLovesVertx(), edevar.getBoolean("lovesVertx"));
 
-    var person2 = edevar.mapTo(Person.class);
+    final var person2 = edevar.mapTo(Person.class);
     assertEquals(person.getId(), person2.getId());
   }
 
