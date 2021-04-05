@@ -19,6 +19,7 @@ public class PointToPointExample {
       //send a message each 1s
       vertx.setPeriodic(1000, id -> {
         vertx.eventBus().send(Sender.class.getName(), "Sending a message without waiting for response");
+        System.out.println("Sending a message without waiting for response");
       });
     }
   }

@@ -18,6 +18,7 @@ public class WorkerExample extends AbstractVerticle {
     vertx.deployVerticle(new WorkerVerticle(),
       new DeploymentOptions()
       .setWorker(true)
+        //Set the maximum number of worker threads to be used by the Vert.x instance.
       .setWorkerPoolSize(1)
       .setWorkerPoolName("my-worker-verticle")
       );
